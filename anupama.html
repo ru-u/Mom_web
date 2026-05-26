@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anupama Mohanram, MD — Physician, Coach & Speaker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #faf7f2;
+      --warm-white: #fff9f3;
+      --sand: #e8dfd0;
+      --taupe: #c4ae96;
+      --warm-brown: #a67c52;
+      --dark-brown: #8b6f47;
+      --sage: #8a9e8c;
+      --sage-light: #c8d5c9;
+      --accent-gold: #b8924a;
+      --text-dark: #2c1f14;
+      --text-mid: #5c4a3a;
+      --text-light: #8a7a6e;
+      --section-pad: clamp(80px, 10vw, 140px);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8vw;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(250, 247, 242, 0.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 0 var(--sand);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--dark-brown);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--warm-brown); }
+    .nav-cta {
+      background: var(--warm-brown);
+      color: var(--cream) !important;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--dark-brown) !important; color: var(--cream) !important; }
+    .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .nav-hamburger span { display: block; width: 24px; height: 1.5px; background: var(--text-dark); transition: 0.3s; }
+
+    /* ─── HERO ─── */
+    #home {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding-top: 80px;
+      background: var(--warm-white);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-bg-circle {
+      position: absolute;
+      width: 60vw; height: 60vw;
+      max-width: 700px; max-height: 700px;
+      right: -10vw; top: 50%;
+      transform: translateY(-50%);
+      background: radial-gradient(circle, var(--sage-light) 0%, transparent 70%);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .hero-text {
+      padding: 6vw 6vw 6vw 8vw;
+      position: relative;
+      z-index: 2;
+      animation: fadeUp 0.9s ease both;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--accent-gold);
+    }
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--dark-brown);
+      margin-bottom: 28px;
+    }
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--warm-brown);
+    }
+    .hero-text p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      max-width: 480px;
+      margin-bottom: 44px;
+    }
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1.5px solid var(--warm-brown);
+      color: var(--warm-brown);
+      background: transparent;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--warm-brown); color: var(--cream); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1.5px solid var(--warm-brown);
+      color: var(--warm-brown);
+      background: transparent;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+    }
+    .btn-outline:hover { background: var(--warm-brown); color: var(--cream); transform: translateY(-2px); }
+    .hero-image {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      animation: fadeIn 1.1s ease both 0.2s;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: var(--section-pad) 8vw; }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent-gold);
+    }
+    h2.section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--dark-brown);
+      margin-bottom: 28px;
+    }
+    h2.section-title em { font-style: italic; color: var(--warm-brown); }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8vw;
+      align-items: center;
+    }
+    .about-image {
+      position: relative;
+    }
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+    }
+    .about-image::before {
+      content: '';
+      position: absolute;
+      inset: -16px -16px 16px 16px;
+      border: 1.5px solid var(--sand);
+      border-radius: 2px;
+      z-index: -1;
+    }
+    .about-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .credential-tag {
+      padding: 8px 16px;
+      background: var(--sand);
+      color: var(--warm-brown);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+    .about-text p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 18px;
+    }
+
+    /* ─── WHAT I HELP WITH (pain points) ─── */
+    #challenges {
+      background: #ddd1c2;
+      color: var(--text-dark);
+      text-align: center;
+    }
+    #challenges .section-label {
+      justify-content: center;
+      color: var(--warm-brown);
+    }
+    #challenges .section-label::before {
+      background: var(--warm-brown);
+    }
+    #challenges h2.section-title {
+      color: var(--text-dark);
+      margin-bottom: 18px;
+    }
+    #challenges h2.section-title em {
+      color: var(--warm-brown);
+    }
+    #challenges > p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(44,31,20,0.7); /* text-dark, semi-transparent */
+      max-width: 620px;
+      margin: 0 auto 64px;
+    }
+    .challenges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .challenge-card {
+      padding: 44px 32px;
+      background: rgba(255,255,255,0.18);
+      text-align: left;
+      transition: background 0.25s;
+      border-radius: 2px;
+      border: 1.5px solid #d2c7ad;
+    }
+    .challenge-card:hover {
+      background: rgba(255,255,255,0.32);
+    }
+    .challenge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--warm-brown);
+      opacity: 0.4;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .challenge-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .challenge-card p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+
+    /* ─── SERVICES ─── */
+    #services {
+      background: var(--warm-white);
+    }
+    .services-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8vw;
+      align-items: start;
+      margin-bottom: 80px;
+    }
+    .services-intro p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+    }
+    .services-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .service-card {
+      padding: 50px 44px;
+      border: 1.5px solid var(--sand);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+      background: var(--warm-white);
+    }
+    .service-card:hover { border-color: var(--taupe); transform: translateY(-4px); }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 0;
+      background: var(--warm-brown);
+      transition: height 0.3s;
+    }
+    .service-card:hover::before { height: 100%; }
+    .service-icon {
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+    }
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--dark-brown);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .service-card p {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+    }
+    .service-card a {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm-brown);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.2s;
+    }
+    .service-card a:hover { gap: 14px; }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials {
+      background: var(--cream);
+      text-align: center;
+    }
+    #testimonials .section-label { justify-content: center; }
+    #testimonials h2.section-title { margin-bottom: 64px; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      padding: 48px 44px;
+      background: var(--warm-white);
+      border-radius: 2px;
+      text-align: left;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      color: var(--sand);
+      line-height: 0.6;
+      position: absolute;
+      top: 36px;
+      left: 36px;
+    }
+    .testimonial-card blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+      padding-top: 32px;
+    }
+    .testimonial-author {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+    }
+
+    /* ─── SPEAKING ─── */
+    #speaking {
+      background: var(--warm-white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8vw;
+      align-items: center;
+    }
+    .speaking-image {
+      position: relative;
+    }
+    .speaking-image::before {
+      content: '';
+      position: absolute;
+      inset: -16px -16px 16px 16px;
+      border: 1.5px solid var(--sand);
+      border-radius: 2px;
+      z-index: -1;
+    }
+    .speaking-image img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .speaking-topics {
+      margin: 32px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .speaking-topic {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.94rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .speaking-topic::before {
+      content: '—';
+      color: var(--accent-gold);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    #speaking p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8vw;
+      align-items: start;
+    }
+    .contact-info p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 32px;
+    }
+    .contact-info-items { margin-top: 36px; }
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .contact-info-item span:first-child {
+      font-size: 1.1rem;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+    }
+    .contact-info-item span:last-child {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start; /* Align both columns to the top */
+    }
+    .form-group { display: flex; flex-direction: column; gap: 0px; }
+    .form-group label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 4px; /* Reduce space below label */
+      margin-top: 8px;    /* Add space above label to separate from previous field */
+    }
+    .form-row .form-group label {
+      margin-top: 0; /* Remove extra top margin for first/last name fields */
+    }
+    .form-group:first-child label {
+      margin-top: 0;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 16px 20px;
+      background: var(--warm-white);
+      border: 1.5px solid var(--sand);
+      border-radius: 2px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.94rem;
+      color: var(--text-dark);
+      transition: border-color 0.2s;
+      outline: none;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--warm-brown); }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-group select:invalid {
+      color: var(--text-light);
+    }
+    .form-group select option[value=""] {
+      color: var(--text-light);
+    }
+    .form-submit {
+      margin-top: 8px;
+      padding: 14px 0; /* Reduced vertical padding */
+      background: var(--warm-brown);
+      color: var(--cream);
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.94rem; /* Reduced font size to match inputs */
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.25s, transform 0.2s;
+      text-align: center;
+      display: block;
+      width: 100%; /* Make button full width of form group */
+      box-sizing: border-box;
+    }
+    .form-submit:hover { background: var(--dark-brown); transform: translateY(-2px); }
+    /* Ensure button is left-aligned with form fields */
+    .contact-form form { width: 100%; }
+    /* Remove any extra centering from parent */
+    .contact-form { align-items: stretch; }
+    .form-success {
+      display: none;
+      padding: 22px;
+      background: var(--sage-light);
+      color: var(--dark-brown);
+      border-radius: 2px;
+      font-size: 0.94rem;
+      line-height: 1.65;
+      text-align: center;
+    }
+    /* New styles for reset button */
+    .form-reset-btn {
+      margin-top: 12px;
+      padding: 12px 0;
+      background: transparent;
+      color: var(--warm-brown);
+      border: 1.5px solid var(--warm-brown);
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+      width: 100%;
+    }
+    .form-reset-btn:hover {
+      background: var(--warm-brown);
+      color: var(--cream);
+      transform: translateY(-2px);
+    }
+    /* Fixed image placeholder styles */
+    .hero-image img, .about-image img, .speaking-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-image {
+      min-height: 500px;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    footer {
+      background: #ddd1c2;
+      padding: 60px 8vw 36px;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 6vw;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--accent-gold); /* GOLD TITLE */
+    }
+
+    .footer-brand span {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      display: block;
+    }
+
+    .footer-col h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--accent-gold); /* GOLD HEADERS */
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 12px; }
+
+    .footer-col ul li a {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover {
+      color: var(--dark-brown);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 28px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── MOBILE NAV OVERLAY ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--warm-white);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--dark-brown);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .mobile-close {
+      position: absolute;
+      top: 24px; right: 6vw;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text-dark);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      #home { grid-template-columns: 1fr; }
+      .hero-image { height: 60vw; min-height: 320px; order: -1; }
+      .hero-text { padding: 48px 6vw; }
+      #about, #speaking, #contact { grid-template-columns: 1fr; }
+      .about-image, .speaking-image { order: -1; }
+      .services-intro { grid-template-columns: 1fr; }
+      .services-cards { grid-template-columns: 1fr; }
+      .challenges-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a class="nav-logo" href="#home">Anupama Mohanram, MD</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Coaching</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#contact" class="nav-cta">Connect</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="openMobileMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <span class="mobile-close" onclick="closeMobileMenu()">✕</span>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#services" onclick="closeMobileMenu()">Coaching</a>
+    <a href="#testimonials" onclick="closeMobileMenu()">Testimonials</a>
+    <a href="#speaking" onclick="closeMobileMenu()">Speaking</a>
+    <a href="#contact" onclick="closeMobileMenu()">Connect with Me</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-bg-circle"></div>
+    <div class="hero-text">
+      <div class="hero-eyebrow">Physician · Coach · Speaker</div>
+      <h1>You've achieved<br>so much. <br> It's time<br>to <em>feel</em> it too.</h1>
+      <p>You're a high-achieving professional who has everything — and yet something feels missing. I help driven, accomplished people break free from perfectionism and self-doubt to find the peace, confidence, and fulfillment they deserve.</p>
+      <div class="hero-btns">
+        <a href="#services" class="btn-primary">Explore Coaching</a>
+        <a href="#contact" class="btn-outline">Let's Connect</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="intro.jpeg" alt="Anupama Mohanram, MD" onerror="this.style.display='none'; this.parentElement.classList.add('img-placeholder'); this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(160deg, var(--sand) 0%, var(--taupe) 100%);color:var(--warm-brown);font-family: Cormorant Garamond, serif;font-style:italic;\'>Image placeholder</div>'" />
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-image reveal">
+      <img src="greeting.jpeg" alt="Dr. Anupama Mohanram" onerror="this.style.display='none'; this.parentElement.innerHTML+='<div style=\'width:100%;aspect-ratio:4/5;background:linear-gradient(150deg, var(--sand) 0%, var(--taupe) 100%);display:flex;align-items:center;justify-content:center;color:var(--warm-brown);font-family:Cormorant Garamond,serif;font-style:italic;\'>Image placeholder</div>';" />
+    </div>
+    <div class="about-text reveal">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Hi, I'm Anupama — <em>physician, coach,</em> and your biggest advocate.</h2>
+      <p>I know what it's like to pour everything into your career, to chase the next achievement, and to still feel like it's not quite enough. As a physician and certified life coach, I've worked with high-achieving professionals who have accomplished incredible things — and yet are quietly exhausted, self-critical, and unfulfilled.</p>
+      <p>My work is about helping you close that gap: between who you are and who you want to feel like. Between your external success and your internal peace. It's not about working harder — it's about finally working <em>with</em> yourself, not against yourself.</p>
+      <p>Together, we'll address the perfectionism, self-doubt, and fear of failure that are holding you back, and build the lasting confidence and balance you've always deserved.</p>
+      <div class="about-credentials">
+        <span class="credential-tag">Physician (MD)</span>
+        <span class="credential-tag">Certified Life Coach</span>
+        <span class="credential-tag">Speaker</span>
+        <span class="credential-tag">LCS Certified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHALLENGES -->
+  <section id="challenges">
+    <div class="section-label">Do you relate?</div>
+    <h2 class="section-title reveal">You're not alone in <em>feeling this way.</em></h2>
+    <p class="reveal">High-achieving professionals often share the same invisible struggles. If any of these sound familiar, you're exactly who I work with.</p>
+    <div class="challenges-grid">
+      <div class="challenge-card reveal">
+        <div class="challenge-num">01</div>
+        <h3>The weight of perfectionism</h3>
+        <p>No matter how much you accomplish, it never feels like enough. You're always raising the bar — and running yourself ragged to reach it.</p>
+      </div>
+      <div class="challenge-card reveal">
+        <div class="challenge-num">02</div>
+        <h3>Constant self-doubt</h3>
+        <p>Deep inside, a voice questions whether you really deserve your success — and you're terrified others might figure that out too.</p>
+      </div>
+      <div class="challenge-card reveal">
+        <div class="challenge-num">03</div>
+        <h3>Burnout & exhaustion</h3>
+        <p>You're overworked, overstretched, and running on empty. The drive that got you here is now leaving you depleted.</p>
+      </div>
+      <div class="challenge-card reveal">
+        <div class="challenge-num">04</div>
+        <h3>Fear of failure</h3>
+        <p>Playing it safe feels necessary — because failing would mean something is fundamentally wrong with you, not just the outcome.</p>
+      </div>
+      <div class="challenge-card reveal">
+        <div class="challenge-num">05</div>
+        <h3>Difficulty setting limits</h3>
+        <p>Saying no feels impossible. You overcommit, overdeliver, and over-explain — and quietly resent it all.</p>
+      </div>
+      <div class="challenge-card reveal">
+        <div class="challenge-num">06</div>
+        <h3>Searching for more</h3>
+        <p>You want balance, peace, and the freedom to simply be yourself — not a version of yourself performing for everyone else's approval.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-intro">
+      <div>
+        <div class="section-label">How We Work Together</div>
+        <h2 class="section-title">Real change is <em>possible</em> — and it starts here.</h2>
+      </div>
+      
+    </div>
+    <div class="services-cards">
+      <div class="service-card reveal">
+        <div class="service-icon">🌿</div>
+        <h3>1:1 Coaching Program</h3>
+        <p>My signature 10-week online coaching program is built for high-achieving professionals ready to break free from perfectionism, shame, and self-doubt. Through personalized support, self-reflection, and practical tools, you'll build lasting confidence, set real boundaries, and discover the balance you've been searching for — without the burnout.</p>
+        <a href="#contact">Start the conversation →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🎤</div>
+        <h3>Speaking Engagements</h3>
+        <p>I offer dynamic, evidence-informed presentations that blend leadership, coaching, and medical insights. My talks are designed to educate and inspire — helping teams and professionals navigate stress, perfectionism, and personal growth with clarity and purpose.</p>
+        <a href="#speaking">Learn more →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="section-label">Client Testimonials</div>
+    <h2 class="section-title">Words from those who've <em>made the shift.</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <blockquote>"I came into coaching thinking I needed to work harder. What I realized through coaching with Anupama was that I needed to stop working against myself. She helped me see how to let go of perfectionism and finally feel like I'm enough."</blockquote>
+        <div class="testimonial-author">— Coaching Client</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <blockquote>"If you are in any way in need of help or guidance — insight into changing the way you look at life — I would highly recommend talking with Anupama. When you change the way you look at things, the things you look at change. Personally, I can say: you won't be sorry."</blockquote>
+        <div class="testimonial-author">— Coaching Client</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING -->
+  <section id="speaking">
+    <div class="speaking-image reveal">
+      <img src="speaker.jpeg" alt="Dr. Anupama Mohanram speaking" onerror="this.style.display='none'; this.parentElement.innerHTML+='<div style=\'width:100%;aspect-ratio:4/5;background:linear-gradient(160deg, var(--sage-light) 0%, var(--sage) 100%);display:flex;align-items:center;justify-content:center;color:var(--warm-brown);font-family:Cormorant Garamond,serif;font-style:italic;\'>Image placeholder</div>';" />
+    </div>
+    <div class="reveal">
+      <div class="section-label">Speaking</div>
+      <h2 class="section-title">Inspiring <em>audiences</em> to lead, grow & thrive.</h2>
+      <p>Looking for a speaker who can inspire, educate, and spark meaningful change? I offer dynamic presentations that combine leadership, coaching, and medical insights — designed to empower audiences with actionable strategies for real life.</p>
+      <div class="speaking-topics">
+        <div class="speaking-topic">Overcoming perfectionism and the fear of failure</div>
+        <div class="speaking-topic">Building resilience in high-pressure professions</div>
+        <div class="speaking-topic">Leadership and emotional intelligence in healthcare</div>
+        <div class="speaking-topic">Setting boundaries without guilt</div>
+        <div class="speaking-topic">Cultivating self-compassion and sustainable success</div>
+      </div>
+      <a href="#contact" class="btn-primary">Inquire About Speaking</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-info reveal">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let's start a <em>conversation.</em></h2>
+      <p>Whether you're curious about coaching, want to explore a speaking engagement, or simply want to say hello — I'd love to hear from you.</p>
+      <div class="contact-info-items">
+        <div class="contact-info-item">
+          <span>📍</span>
+          <span>Available virtually — working with clients everywhere</span>
+        </div>
+        <div class="contact-info-item">
+          <span>📱</span>
+          <span>@anupamamy on Instagram</span>
+        </div>
+        <div class="contact-info-item">
+          <span>💼</span>
+          <span>
+            <a href="https://www.linkedin.com/in/anupamamd/" target="_blank" style="color: var(--text-mid); text-decoration: none;">
+              Connect on LinkedIn
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <!-- Form container - always visible but toggles content -->
+      <div id="form-container" style="display: block;">
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" placeholder="Jane" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="reason">I'm interested in…</label>
+            <select id="reason" name="reason">
+              <option value="">— Select one —</option>
+              <option value="coaching">1:1 Coaching Program</option>
+              <option value="speaking">Speaking Engagement</option>
+              <option value="other">Something Else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me a bit about yourself and what you're looking for…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+      <!-- Success message container -->
+      <div id="success-container" style="display: none;">
+        <div class="form-success" style="display: block; margin-bottom: 20px;">
+          <p style="margin-bottom: 20px;">✓ Thank you! Your message has been sent. I'll be in touch soon.</p>
+        </div>
+        <button class="form-reset-btn" id="reset-form-btn">Send Another Message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p>Anupama Mohanram, MD</p>
+        <span>Physician · Certified Life Coach · Speaker</span>
+        <span style="margin-top:10px;">Helping high-achieving professionals find<br>confidence, balance, and peace of mind.</span>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Coaching</a></li>
+          <li><a href="#speaking">Speaking</a></li>
+          <li><a href="#testimonials">Client Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://instagram.com/anupamam" target="_blank">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/anupamamd/" target="_blank">LinkedIn</a></li>
+          <li><a href="#contact">Send a message</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Anupama Mohanram, MD. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Mobile menu
+    function openMobileMenu() { document.getElementById('mobile-menu').classList.add('open'); }
+    function closeMobileMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
+
+    // Contact form with reset functionality - FIXED VERSION
+    const form = document.getElementById('contact-form');
+    const formContainer = document.getElementById('form-container');
+    const successContainer = document.getElementById('success-container');
+    const resetBtn = document.getElementById('reset-form-btn');
+    
+    function showForm() {
+      formContainer.style.display = 'block';
+      successContainer.style.display = 'none';
+      if (form) form.reset();
+    }
+    
+    function showSuccess() {
+      formContainer.style.display = 'none';
+      successContainer.style.display = 'block';
+    }
+    
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const action = form.getAttribute('action');
+        
+        if (action.includes('YOUR_FORM_ID')) {
+          // Demo mode — just show success
+          showSuccess();
+          return;
+        }
+        
+        try {
+          const res = await fetch(action, {
+            method: 'POST',
+            body: data,
+            headers: { Accept: 'application/json' }
+          });
+          if (res.ok) {
+            showSuccess();
+          } else {
+            alert('Something went wrong. Please try again.');
+          }
+        } catch (err) {
+          alert('Oops — something went wrong. Please try again or reach out on Instagram.');
+        }
+      });
+      
+      // Reset button functionality
+      if (resetBtn) {
+        resetBtn.addEventListener('click', showForm);
+      }
+    }
+
+    // Always load at the top, even if URL has a hash
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+      setTimeout(function() { window.scrollTo(0, 0); }, 1);
+    });
+  </script>
+
+</body>
+</html>

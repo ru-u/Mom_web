@@ -42,19 +42,12 @@ Every page has these placeholders that `assets/partials.js` fills in on load:
 The markup is built from JS template strings (not `fetch()`), so it works on GitHub Pages
 and over `file://`. Edit the nav/footer once in `assets/partials.js`.
 
-## ⚠️ Contact form — action required
+## Contact form
 
-The form on `contact.html` posts to a **placeholder** Formspree endpoint and will **not**
-deliver email until set up:
-
-1. Create a free form at <https://formspree.io> using `anupama@anupamamd.com` as the
-   destination, and confirm the verification email.
-2. Copy the endpoint (looks like `https://formspree.io/f/abcdwxyz`).
-3. In [`contact.html`](contact.html), replace `REPLACE_WITH_FORM_ID` in the form's `action`
-   with that ID.
-
-Until then, visitors who submit are asked to email `anupama@anupamamd.com` directly, and a
-visible `mailto:` fallback is shown near the form.
+The form on `contact.html` posts via Formspree to `anupama@anupamamd.com`
+(endpoint `https://formspree.io/f/xpqekoza`). A visible `mailto:` fallback is also shown
+near the form. To change the destination, update the form's `action` with a new
+`https://formspree.io/f/<ID>` endpoint.
 
 > **Note:** the old `formspree.io/<email>` URL format is deprecated and silently fails —
 > always use the `formspree.io/f/<ID>` format.

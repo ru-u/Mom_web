@@ -9,9 +9,8 @@
     <footer id="site-footer"></footer>
   ...and this script fills them in.
 
-  NOTE: Instagram handle is standardized to @anupamamd here. The original site
-  had three conflicting values (@anupamamy, /anupamam, none). Confirm the
-  correct handle with the owner and update SOCIAL.instagram below.
+  NOTE: Instagram is the brand account @limelightandleaf. Update SOCIAL below
+  if it ever changes.
 */
 (function () {
   // Are we inside the /legal/ folder? If so, links need a "../" prefix.
@@ -23,8 +22,8 @@
   if (!file) file = 'index.html';
 
   var SOCIAL = {
-    instagram: 'https://instagram.com/anupamamd',
-    instagramHandle: '@anupamamd',
+    instagram: 'https://www.instagram.com/limelightandleaf/',
+    instagramHandle: '@limelightandleaf',
     linkedin: 'https://www.linkedin.com/in/anupamamd/',
     email: 'anupama@anupamamd.com'
   };
@@ -52,7 +51,7 @@
   /* ── NAV ── */
   var navHTML =
     '<nav id="main-nav">' +
-      '<a class="nav-logo" href="' + base + 'index.html">Anupama Mohanram, MD</a>' +
+      '<a class="nav-logo" href="' + base + 'index.html">Limelight &amp; Leaf</a>' +
       '<ul class="nav-links">' +
         navItems.map(navLinkMarkup).join('') +
         '<li><a href="' + base + 'contact.html" class="nav-cta"' + contactActive + '>Connect</a></li>' +

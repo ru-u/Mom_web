@@ -61,9 +61,6 @@ visible `mailto:` fallback is shown near the form.
 
 ## To confirm with the owner
 
-- **Instagram handle** is standardized to `@anupamamd` (`instagram.com/anupamamd`) in
-  `assets/partials.js` and `contact.html`. The original site had conflicting values —
-  confirm the correct handle and update `SOCIAL.instagram` in `assets/partials.js`.
 - **Governing law** placeholder in `legal/terms.html` (`[STATE/JURISDICTION]`).
 
 ## Local preview

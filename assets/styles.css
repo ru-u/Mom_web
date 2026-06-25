@@ -280,6 +280,22 @@ h2.section-title em { font-style: italic; color: var(--warm-brown); }
   line-height: 1.7;
   color: var(--text-mid);
 }
+.teaser-card .teaser-link {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm-brown);
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+.teaser-card .teaser-link:hover { gap: 14px; }
+
+/* Dual-button row inside CTA bands */
+.cta-band .hero-btns { justify-content: center; }
 
 /* ─── ABOUT ─── */
 #about {

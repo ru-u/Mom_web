@@ -51,7 +51,7 @@
   /* ── NAV ── */
   var navHTML =
     '<nav id="main-nav">' +
-      '<a class="nav-logo" href="' + base + 'index.html">Limelight &amp; Leaf</a>' +
+      '<a class="nav-logo" href="' + base + 'index.html">Anupama Mohanram, MD</a>' +
       '<ul class="nav-links">' +
         navItems.map(navLinkMarkup).join('') +
         '<li><a href="' + base + 'contact.html" class="nav-cta"' + contactActive + '>Connect</a></li>' +
@@ -75,7 +75,7 @@
   var footerHTML =
     '<div class="footer-inner">' +
       '<div class="footer-brand">' +
-        '<p>Limelight &amp; Leaf</p>' +
+        '<p>Anupama Mohanram, MD</p>' +
         '<span>Physician &middot; Certified Life Coach &middot; Speaker</span>' +
         '<span style="margin-top:10px;">Helping high-achieving professionals find<br>confidence, balance, and peace of mind.</span>' +
       '</div>' +
